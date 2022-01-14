@@ -6,10 +6,7 @@ import { ImBin } from 'react-icons/im';
 import s from './ContactList.module.css';
 
 const ContactList = () => {
-  // const contacts = useSelector(state => state.contacts.items);
-  // console.log(contacts);
   const contacts = useSelector(getVisibleContact);
-  // console.log('contacts', contacts);
   const dispatch = useDispatch();
   const onDeleteContact = id => dispatch(contactsActions.deleteContact(id));
 

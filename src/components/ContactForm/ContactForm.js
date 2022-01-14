@@ -2,30 +2,15 @@ import { useLocaleStorage } from '../../hooks/useLocaleStorage';
 import { useDispatch } from 'react-redux';
 import contactsActions from '../../redux/contacts/contacts-actions';
 import s from './ContactForm.module.css';
-import { useSelector } from 'react-redux';
-import { getVisibleContact } from '../../redux/contacts/contacts-selectors';
 import { ImUserPlus } from 'react-icons/im';
 
 export default function ContactForm() {
   const [name, setName] = useLocaleStorage('name', '');
   const [number, setNumber] = useLocaleStorage('number', '');
-  // const [message, setMessage] = useState('');
-  const contacts = useSelector(getVisibleContact);
-  console.log('contacts', contacts);
   const dispatch = useDispatch();
 
   const hundleChange = e => {
     const { name, value } = e.currentTarget;
-    console.log(name);
-    // if (
-    //   contacts.find(
-    //     contact => contact.name.toLowerCase() === name.toLowerCase(),
-    //   )
-    // ) {
-    //   return alert(`${name} уже есть`);
-    // }
-    //   setContacts([name, ...contacts]);
-    // };
 
     switch (name) {
       case 'name':
@@ -44,10 +29,9 @@ export default function ContactForm() {
   const hundleSubmit = e => {
     e.preventDefault();
     dispatch(contactsActions.addContact({ name, number }));
-    // onSubmit();
-    // onSubmit({ name, number });
     reset();
   };
+
   const reset = () => {
     setName('');
     setNumber('');

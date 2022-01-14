@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
 import actions from './contacts-actions';
-// import { toast } from 'react-toastify';
 import toastWarm from '../../helpers/toastWarn';
 import 'react-toastify/dist/ReactToastify.css';
 

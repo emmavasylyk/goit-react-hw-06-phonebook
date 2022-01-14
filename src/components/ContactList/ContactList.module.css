@@ -1,5 +1,6 @@
 .ContactListItem {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .ContactListItem:not(:last-child) {
