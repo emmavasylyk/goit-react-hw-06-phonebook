@@ -2,13 +2,14 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getVisibleContact } from '../../redux/contacts/contacts-selectors';
 import contactsActions from '../../redux/contacts/contacts-actions';
+import { ImBin } from 'react-icons/im';
 import s from './ContactList.module.css';
 
 const ContactList = () => {
   // const contacts = useSelector(state => state.contacts.items);
   // console.log(contacts);
   const contacts = useSelector(getVisibleContact);
-  // console.log('contacts2', contacts2);
+  // console.log('contacts', contacts);
   const dispatch = useDispatch();
   const onDeleteContact = id => dispatch(contactsActions.deleteContact(id));
 
@@ -24,6 +25,7 @@ const ContactList = () => {
             type="button"
             onClick={() => onDeleteContact(id)}
           >
+            <ImBin className={s.ContactListButtonIcon} />
             Delete
           </button>
         </li>

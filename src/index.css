@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #484848;
-  background-image: url(./contacts-fonts.jpg);
+  /* background-image: url(./contacts-fonts.jpg); */
 }
 
 code {

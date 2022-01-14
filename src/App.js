@@ -8,19 +8,21 @@ import ContactList from './components/ContactList';
 import Filter from './components/Filter';
 import { useLocaleStorage } from '../src/hooks/useLocaleStorage';
 import { useSelector, useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const Title = ['Title'];
 
 export default function App() {
   // const [filter, setFilter] = useState('');
-  const [contacts, setContacts] = useLocaleStorage('contacts', [
-    { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-    { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-    { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-    { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-  ]);
-  const contacts1 = useSelector(state => state.contacts.items);
-  console.log(contacts1);
+  // const [contacts, setContacts] = useLocaleStorage('contacts', [
+  //   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+  //   { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+  //   { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+  //   { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+  // ]);
+  // const contacts1 = useSelector(state => state.contacts.items);
+  // console.log(contacts1);
   // dispatch(contactsActions.addContact({ name, number }));
   // const formSubmitHandler = ({ name, number }) => {
   //   // const addContact = {
@@ -64,6 +66,7 @@ export default function App() {
       <h2 className={Title}>Contacts</h2>
       <Filter />
       <ContactList />
+      <ToastContainer theme={'colored'} />
     </Container>
   );
 }

@@ -6,7 +6,6 @@ import contactsActions from '../../redux/contacts/contacts-actions';
 
 const Filter = () => {
   const value = useSelector(getFilter);
-  console.log('value', value);
   const dispatch = useDispatch();
 
   return (
@@ -18,7 +17,6 @@ const Filter = () => {
         type="text"
         value={value}
         onChange={e => {
-          console.log('e.target.value', e.target.value);
           dispatch(contactsActions.changeFilter(e.target.value));
         }}
       />
