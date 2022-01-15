@@ -1,6 +1,7 @@
 import { useLocaleStorage } from '../../hooks/useLocaleStorage';
 import { useDispatch } from 'react-redux';
 import contactsActions from '../../redux/contacts/contacts-actions';
+import { nanoid } from 'nanoid';
 import s from './ContactForm.module.css';
 import { ImUserPlus } from 'react-icons/im';
 
@@ -28,7 +29,8 @@ export default function ContactForm() {
 
   const hundleSubmit = e => {
     e.preventDefault();
-    dispatch(contactsActions.addContact({ name, number }));
+    const contact = { id: nanoid(), name, number };
+    dispatch(contactsActions.addContact(contact));
     reset();
   };
 
